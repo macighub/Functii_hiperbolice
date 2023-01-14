@@ -39,6 +39,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_From = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.chk_acsch = New System.Windows.Forms.CheckBox()
         Me.chk_csch = New System.Windows.Forms.CheckBox()
@@ -87,11 +88,12 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.txt_From)
         Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.Label13)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.Panel1.Size = New System.Drawing.Size(882, 36)
+        Me.Panel1.Size = New System.Drawing.Size(882, 59)
         Me.Panel1.TabIndex = 0
         '
         'Label12
@@ -102,7 +104,7 @@ Partial Class Form1
         Me.Label12.ForeColor = System.Drawing.Color.White
         Me.Label12.Location = New System.Drawing.Point(691, 3)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(29, 33)
+        Me.Label12.Size = New System.Drawing.Size(29, 32)
         Me.Label12.TabIndex = 14
         Me.Label12.Text = "= i"
         Me.Label12.UseCompatibleTextRendering = True
@@ -115,7 +117,7 @@ Partial Class Form1
         Me.Label8.ForeColor = System.Drawing.Color.White
         Me.Label8.Location = New System.Drawing.Point(668, 3)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(23, 33)
+        Me.Label8.Size = New System.Drawing.Size(23, 32)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "n-1"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -129,7 +131,7 @@ Partial Class Form1
         Me.Label11.ForeColor = System.Drawing.Color.White
         Me.Label11.Location = New System.Drawing.Point(641, 3)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(27, 33)
+        Me.Label11.Size = New System.Drawing.Size(27, 32)
         Me.Label11.TabIndex = 13
         Me.Label11.Text = "- x"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -143,7 +145,7 @@ Partial Class Form1
         Me.Label7.ForeColor = System.Drawing.Color.White
         Me.Label7.Location = New System.Drawing.Point(631, 3)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(10, 33)
+        Me.Label7.Size = New System.Drawing.Size(10, 32)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "n"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -157,7 +159,7 @@ Partial Class Form1
         Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(533, 3)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 33)
+        Me.Label9.Size = New System.Drawing.Size(98, 32)
         Me.Label9.TabIndex = 11
         Me.Label9.Text = ") ≤ 255;    x"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -171,7 +173,7 @@ Partial Class Form1
         Me.Label6.ForeColor = System.Drawing.Color.White
         Me.Label6.Location = New System.Drawing.Point(526, 3)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(7, 33)
+        Me.Label6.Size = New System.Drawing.Size(7, 32)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "1"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -185,7 +187,7 @@ Partial Class Form1
         Me.Label10.ForeColor = System.Drawing.Color.White
         Me.Label10.Location = New System.Drawing.Point(499, 3)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(27, 33)
+        Me.Label10.Size = New System.Drawing.Size(27, 32)
         Me.Label10.TabIndex = 12
         Me.Label10.Text = "- x"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -199,7 +201,7 @@ Partial Class Form1
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(491, 3)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(8, 33)
+        Me.Label5.Size = New System.Drawing.Size(8, 32)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "n"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -213,7 +215,7 @@ Partial Class Form1
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(342, 3)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(149, 33)
+        Me.Label4.Size = New System.Drawing.Size(149, 32)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = ";    0.0001 ≤ i ≤ (x"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -239,7 +241,7 @@ Partial Class Form1
         Me.Label3.ForeColor = System.Drawing.Color.White
         Me.Label3.Location = New System.Drawing.Point(207, 3)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 33)
+        Me.Label3.Size = New System.Drawing.Size(59, 32)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "] ;    i="
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
@@ -294,6 +296,20 @@ Partial Class Form1
         Me.Label1.Text = "x ϵ ["
         Me.Label1.UseCompatibleTextRendering = True
         '
+        'Label13
+        '
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(0, 35)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(882, 24)
+        Me.Label13.TabIndex = 15
+        Me.Label13.Text = "i - intervalul dintre doua valori consecutive calculate"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label13.UseCompatibleTextRendering = True
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Black
@@ -312,9 +328,9 @@ Partial Class Form1
         Me.Panel2.Controls.Add(Me.Panel5)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.163636!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Panel2.Location = New System.Drawing.Point(0, 36)
+        Me.Panel2.Location = New System.Drawing.Point(0, 59)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(259, 631)
+        Me.Panel2.Size = New System.Drawing.Size(259, 608)
         Me.Panel2.TabIndex = 1
         '
         'chk_acsch
@@ -555,9 +571,9 @@ Partial Class Form1
         Me.Panel3.Controls.Add(Me.pic_Graphics)
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(259, 36)
+        Me.Panel3.Location = New System.Drawing.Point(259, 59)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(623, 631)
+        Me.Panel3.Size = New System.Drawing.Size(623, 608)
         Me.Panel3.TabIndex = 2
         '
         'pic_Graphics
@@ -566,7 +582,7 @@ Partial Class Form1
         Me.pic_Graphics.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pic_Graphics.Location = New System.Drawing.Point(0, 30)
         Me.pic_Graphics.Name = "pic_Graphics"
-        Me.pic_Graphics.Size = New System.Drawing.Size(623, 601)
+        Me.pic_Graphics.Size = New System.Drawing.Size(623, 578)
         Me.pic_Graphics.TabIndex = 1
         Me.pic_Graphics.TabStop = False
         '
@@ -597,9 +613,9 @@ Partial Class Form1
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel6.Location = New System.Drawing.Point(259, 36)
+        Me.Panel6.Location = New System.Drawing.Point(259, 59)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(2, 631)
+        Me.Panel6.Size = New System.Drawing.Size(2, 608)
         Me.Panel6.TabIndex = 3
         '
         'tmr_Resize
@@ -676,4 +692,5 @@ Partial Class Form1
     Friend WithEvents Label11 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents Label13 As Label
 End Class
