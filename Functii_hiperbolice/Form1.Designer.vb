@@ -24,9 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_Step = New System.Windows.Forms.TextBox()
@@ -68,9 +72,13 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.Label12)
         Me.Panel1.Controls.Add(Me.Label8)
+        Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label10)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.txt_Step)
@@ -82,74 +90,141 @@ Partial Class Form1
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
         Me.Panel1.Size = New System.Drawing.Size(882, 36)
         Me.Panel1.TabIndex = 0
         '
+        'Label12
+        '
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(691, 3)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(29, 33)
+        Me.Label12.TabIndex = 14
+        Me.Label12.Text = "= i"
+        Me.Label12.UseCompatibleTextRendering = True
+        '
         'Label8
         '
-        Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(662, 14)
+        Me.Label8.Location = New System.Drawing.Point(668, 3)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(27, 17)
+        Me.Label8.Size = New System.Drawing.Size(23, 33)
         Me.Label8.TabIndex = 10
         Me.Label8.Text = "n-1"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label8.UseCompatibleTextRendering = True
+        '
+        'Label11
+        '
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(641, 3)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(27, 33)
+        Me.Label11.TabIndex = 13
+        Me.Label11.Text = "- x"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label11.UseCompatibleTextRendering = True
         '
         'Label7
         '
-        Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(627, 14)
+        Me.Label7.Location = New System.Drawing.Point(631, 3)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(15, 17)
+        Me.Label7.Size = New System.Drawing.Size(10, 33)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "n"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label7.UseCompatibleTextRendering = True
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(533, 3)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(98, 33)
+        Me.Label9.TabIndex = 11
+        Me.Label9.Text = ") ≤ 255;    x"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label9.UseCompatibleTextRendering = True
         '
         'Label6
         '
-        Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(526, 14)
+        Me.Label6.Location = New System.Drawing.Point(526, 3)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(15, 17)
+        Me.Label6.Size = New System.Drawing.Size(7, 33)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "1"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label6.UseCompatibleTextRendering = True
+        '
+        'Label10
+        '
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(499, 3)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(27, 33)
+        Me.Label10.TabIndex = 12
+        Me.Label10.Text = "- x"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label10.UseCompatibleTextRendering = True
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(493, 14)
+        Me.Label5.Location = New System.Drawing.Point(491, 3)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(15, 17)
+        Me.Label5.Size = New System.Drawing.Size(8, 33)
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "n"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        Me.Label5.UseCompatibleTextRendering = True
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(350, 3)
+        Me.Label4.Location = New System.Drawing.Point(342, 3)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(380, 25)
+        Me.Label4.Size = New System.Drawing.Size(149, 33)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = ";    0.0001 ≤ i ≤ (x   - x  ) ≤ 255;    x   - x     = i"
+        Me.Label4.Text = ";    0.0001 ≤ i ≤ (x"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label4.UseCompatibleTextRendering = True
         '
         'txt_Step
         '
         Me.txt_Step.BackColor = System.Drawing.Color.Silver
         Me.txt_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_Step.Location = New System.Drawing.Point(274, 5)
+        Me.txt_Step.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txt_Step.Location = New System.Drawing.Point(266, 3)
         Me.txt_Step.Name = "txt_Step"
         Me.txt_Step.Size = New System.Drawing.Size(76, 26)
         Me.txt_Step.TabIndex = 5
@@ -158,21 +233,24 @@ Partial Class Form1
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(216, 3)
+        Me.Label3.Location = New System.Drawing.Point(207, 3)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 25)
+        Me.Label3.Size = New System.Drawing.Size(59, 33)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "] ;    i="
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label3.UseCompatibleTextRendering = True
         '
         'txt_To
         '
         Me.txt_To.BackColor = System.Drawing.Color.Silver
         Me.txt_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_To.Location = New System.Drawing.Point(141, 5)
+        Me.txt_To.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txt_To.Location = New System.Drawing.Point(131, 3)
         Me.txt_To.Name = "txt_To"
         Me.txt_To.Size = New System.Drawing.Size(76, 26)
         Me.txt_To.TabIndex = 3
@@ -182,9 +260,10 @@ Partial Class Form1
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(126, 3)
+        Me.Label2.Location = New System.Drawing.Point(115, 3)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(16, 25)
         Me.Label2.TabIndex = 2
@@ -194,7 +273,8 @@ Partial Class Form1
         '
         Me.txt_From.BackColor = System.Drawing.Color.Silver
         Me.txt_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_From.Location = New System.Drawing.Point(51, 5)
+        Me.txt_From.Dock = System.Windows.Forms.DockStyle.Left
+        Me.txt_From.Location = New System.Drawing.Point(39, 3)
         Me.txt_From.Name = "txt_From"
         Me.txt_From.Size = New System.Drawing.Size(76, 26)
         Me.txt_From.TabIndex = 1
@@ -204,13 +284,15 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(13, 3)
+        Me.Label1.Location = New System.Drawing.Point(0, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 25)
+        Me.Label1.Size = New System.Drawing.Size(39, 30)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "x ϵ ["
+        Me.Label1.UseCompatibleTextRendering = True
         '
         'Panel2
         '
@@ -462,7 +544,7 @@ Partial Class Form1
         Me.chk_all.ForeColor = System.Drawing.Color.White
         Me.chk_all.Location = New System.Drawing.Point(10, 0)
         Me.chk_all.Name = "chk_all"
-        Me.chk_all.Size = New System.Drawing.Size(195, 36)
+        Me.chk_all.Size = New System.Drawing.Size(122, 23)
         Me.chk_all.TabIndex = 0
         Me.chk_all.Text = "Toate funcțiile"
         Me.chk_all.UseVisualStyleBackColor = False
@@ -590,4 +672,8 @@ Partial Class Form1
     Friend WithEvents Panel6 As Panel
     Friend WithEvents tmr_Resize As Timer
     Friend WithEvents tmr_Calculate As Timer
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class
