@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.Intrinsics.X86
+﻿Imports System.Drawing.Drawing2D
+Imports System.Runtime.Intrinsics.X86
 
 Public Class Form1
     'Private val_Fct(12) As Coordinates
@@ -104,10 +105,26 @@ Public Class Form1
         Dim l_CheckedFunctionCount As Integer = CheckedFunctionCount()
         Dim l_CheckedFunctions() As KeyValuePair(Of String, Boolean) = CheckedFunctions()
         Dim l_GridSize As Size = GridSize()
+        Dim l_From As Double = Double.Parse(txt_From.Text, Globalization.NumberStyles.Any, Globalization.CultureInfo.CurrentCulture)
+        Dim l_To As Double = Double.Parse(txt_To.Text, Globalization.NumberStyles.Any, Globalization.CultureInfo.CurrentCulture)
+
+        Dim sizeFactor As Double
+        Dim sizeFactor_x As Double
+        Dim sizeFactor_y As Double
+        Dim v_VOffset As Integer
+        Dim v_HOffset As Integer
 
         'CreateGraphs()
 
+        Dim grfArea As Rectangle
+
         If chk_Single.Checked Then
+            If pic_Graphics.Width / pic_Graphics.Height >= 1.5 Then
+                grfArea = New Rectangle(10, 10, pic_Graphics.Width - 450, pic_Graphics.Height - 20)
+            Else
+                grfArea = New Rectangle(10, 80, pic_Graphics.Width - 20, pic_Graphics.Height - 95)
+            End If
+
             e.Graphics.FillRectangle(New SolidBrush(Color.FromArgb(25, 25, 25)),
                                      0,
                                      0,
@@ -119,47 +136,140 @@ Public Class Form1
                                      pic_Graphics.Width - 1,
                                      pic_Graphics.Height - 1)
             e.Graphics.DrawLine(New Pen(Color.DimGray, 3),
-                                10,
-                                CInt(pic_Graphics.Height / 2),
-                                pic_Graphics.Width - 10,
-                                CInt(pic_Graphics.Height / 2))
+                                grfArea.Left,
+                                grfArea.Top + CInt(grfArea.Height / 2),
+                                grfArea.Left + grfArea.Width,
+                                grfArea.Top + CInt(grfArea.Height / 2))
             e.Graphics.DrawLine(New Pen(Color.DimGray, 3),
-                                CInt(pic_Graphics.Width / 2),
-                                pic_Graphics.Height - 10,
-                                CInt(pic_Graphics.Width / 2),
-                                10)
+                                CInt(grfArea.Width / 2) + grfArea.Left,
+                                grfArea.Top + grfArea.Height,
+                                CInt(grfArea.Width / 2) + grfArea.Left,
+                                grfArea.Top)
             For locCnt = 1 To 5
                 e.Graphics.DrawLine(New Pen(Color.DimGray),
-                                    pic_Graphics.Width - 20,
-                                    CInt(pic_Graphics.Height / 2) - locCnt,
-                                    pic_Graphics.Width - 10,
-                                    CInt(pic_Graphics.Height / 2))
+                                    grfArea.Left + grfArea.Width - 10,
+                                    grfArea.Top + CInt(grfArea.Height / 2) - locCnt,
+                                    grfArea.Left + grfArea.Width,
+                                    grfArea.Top + CInt(grfArea.Height / 2))
                 e.Graphics.DrawLine(New Pen(Color.DimGray),
-                                    pic_Graphics.Width - 20,
-                                    CInt(pic_Graphics.Height / 2) + locCnt,
-                                    pic_Graphics.Width - 10,
-                                    CInt(pic_Graphics.Height / 2))
+                                    grfArea.Left + grfArea.Width - 10,
+                                    grfArea.Top + CInt(grfArea.Height / 2) + locCnt,
+                                    grfArea.Left + grfArea.Width,
+                                    grfArea.Top + CInt(grfArea.Height / 2))
                 e.Graphics.DrawLine(New Pen(Color.DimGray),
-                                    CInt(pic_Graphics.Width / 2) - locCnt,
-                                    20,
-                                    CInt(pic_Graphics.Width / 2),
-                                    10)
+                                    grfArea.Left + CInt(grfArea.Width / 2) - locCnt,
+                                    grfArea.Top + 10,
+                                    grfArea.Left + CInt(grfArea.Width / 2),
+                                    grfArea.Top)
                 e.Graphics.DrawLine(New Pen(Color.DimGray),
-                                    CInt(pic_Graphics.Width / 2) + locCnt,
-                                    20,
-                                    CInt(pic_Graphics.Width / 2),
-                                    10)
+                                    grfArea.Left + CInt(grfArea.Width / 2) + locCnt,
+                                    grfArea.Top + 10,
+                                    grfArea.Left + CInt(grfArea.Width / 2),
+                                    grfArea.Top)
             Next
+
+            For grfCnt = 0 To 11
+                sizeFactor_x = ((grfArea.Width) / (l_To - l_From))
+                sizeFactor_y = ((grfArea.Height) / (val_Fct(grfCnt)(0).Value - val_Fct(grfCnt)(0).Key))
+                If Double.IsNaN(sizeFactor_y) Then
+                    sizeFactor_y = sizeFactor_x
+                End If
+
+                If Double.IsNaN(sizeFactor) OrElse sizeFactor = 0 Then
+                    sizeFactor = Math.Min(sizeFactor_x, sizeFactor_y)
+                Else
+                    sizeFactor = Math.Min(sizeFactor, Math.Min(sizeFactor_x, sizeFactor_y))
+                End If
+            Next
+
+            Dim v_step As Double = 0.0001
+            While (v_step * sizeFactor_x) < 25
+                If Replace(Replace(Replace(v_step.ToString, "0", ""), ".", ""), ",", "") = "1" Then
+                    v_step *= 5
+                Else
+                    v_step *= 2
+                End If
+            End While
+            Dim lineCnt As Double = v_step
+            While (lineCnt * sizeFactor_x) <= ((grfArea.Width / 2) - 10)
+                lineCnt = Math.Round(lineCnt, 2)
+                e.Graphics.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                                   grfArea.Left + CInt((grfArea.Width / 2) - (lineCnt * sizeFactor_x)),
+                                   grfArea.Top,
+                                   grfArea.Left + CInt((grfArea.Width / 2) - (lineCnt * sizeFactor_x)),
+                                   grfArea.Top + grfArea.Height)
+                e.Graphics.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                                   grfArea.Left + CInt((grfArea.Width / 2) + (lineCnt * sizeFactor_x)),
+                                   grfArea.Top,
+                                   grfArea.Left + CInt((grfArea.Width / 2) + (lineCnt * sizeFactor_x)),
+                                   grfArea.Top + grfArea.Height)
+                If CInt((grfArea.Width / 2) - (lineCnt * sizeFactor_x)) - 6 > 0 Then
+                    v_HOffset = CInt(e.Graphics.MeasureString((-lineCnt).ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width / 2)
+                    v_VOffset = e.Graphics.MeasureString((-lineCnt).ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height
+                    e.Graphics.DrawString((-lineCnt).ToString,
+                                          New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
+                                          New SolidBrush(Color.White),
+                                          grfArea.Left + CInt((grfArea.Width / 2) - (lineCnt * sizeFactor_x)) - v_HOffset,
+                                          grfArea.Top + CInt((grfArea.Height / 2) - v_VOffset) - 3)
+                    v_HOffset = CInt(e.Graphics.MeasureString(lineCnt.ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width / 2)
+                    v_VOffset = e.Graphics.MeasureString(lineCnt.ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height
+                    e.Graphics.DrawString(lineCnt.ToString,
+                                          New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
+                                          New SolidBrush(Color.White),
+                                          grfArea.Left + CInt((grfArea.Width / 2) + (lineCnt * sizeFactor_x)) - v_HOffset,
+                                          grfArea.Top + CInt((grfArea.Height / 2) + 6))
+                End If
+                lineCnt += v_step
+            End While
+
+            v_step = 0.001
+            While (v_step * sizeFactor) < 15
+                If Replace(Replace(Replace(v_step.ToString, "0", ""), ".", ""), ",", "") = "1" Then
+                    v_step *= 5
+                Else
+                    v_step *= 2
+                End If
+            End While
+            lineCnt = v_step
+            While (lineCnt * sizeFactor) <= ((grfArea.Height / 2) - 10)
+                e.Graphics.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                                    grfArea.Left,
+                                    grfArea.Top + CInt((grfArea.Height / 2) + (lineCnt * sizeFactor)),
+                                    grfArea.Left + grfArea.Width,
+                                    grfArea.Top + CInt((grfArea.Height / 2) + (lineCnt * sizeFactor)))
+                e.Graphics.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                                    grfArea.Left,
+                                    grfArea.Top + CInt((grfArea.Height / 2) - (lineCnt * sizeFactor)),
+                                    grfArea.Left + grfArea.Width,
+                                    grfArea.Top + CInt((grfArea.Height / 2) - (lineCnt * sizeFactor)))
+                If CInt((grfArea.Height / 2) - (lineCnt * sizeFactor)) - 6 > 0 Then
+                    v_HOffset = e.Graphics.MeasureString((-lineCnt).ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width
+                    v_VOffset = CInt(e.Graphics.MeasureString((-lineCnt).ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height / 2)
+                    e.Graphics.DrawString((-lineCnt).ToString,
+                                     New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
+                                     New SolidBrush(Color.White),
+                                     grfArea.Left + CInt(grfArea.Width / 2) + 3,
+                                     grfArea.Top + CInt((grfArea.Height / 2) + (lineCnt * sizeFactor)) - v_VOffset)
+                    v_HOffset = e.Graphics.MeasureString(lineCnt.ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width
+                    v_VOffset = CInt(e.Graphics.MeasureString(lineCnt.ToString, New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height / 2)
+                    e.Graphics.DrawString(lineCnt.ToString,
+                                     New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
+                                     New SolidBrush(Color.White),
+                                     grfArea.Left + CInt(grfArea.Width / 2) - v_HOffset - 3,
+                                     grfArea.Top + CInt((grfArea.Height / 2) - (lineCnt * sizeFactor)) - v_VOffset)
+                End If
+                lineCnt += v_step
+            End While
+
             For grfCnt = 0 To 11
                 If l_CheckedFunctions(grfCnt).Value Then
-                    e.Graphics.DrawImage(bmp_GRF(grfCnt), 15, 15)
+                    e.Graphics.DrawImage(bmp_GRF(grfCnt), grfArea.Left, grfArea.Top)
                 End If
             Next
         Else
 
             Dim grfCnt As Integer = 0
             Dim grfRect As Rectangle
-            Dim grfArea As Rectangle
             For rowcnt = 0 To l_GridSize.Height - 1
                 For colcnt = 0 To l_GridSize.Width - 1
                     grfRect = New Rectangle(CInt(colcnt * (pic_Graphics.Width / l_GridSize.Width)),
@@ -566,106 +676,108 @@ Public Class Form1
                 Dim v_step As Double
                 Dim lineCnt As Double
 
-                v_step = 0.0001
-                While (v_step * sizeFactor_x) < 25
-                    If Replace(Replace(Replace(v_step.ToString, "0", ""), ".", ""), ",", "") = "1" Then
-                        v_step *= 5
-                    Else
-                        v_step *= 2
-                    End If
-                End While
-                lineCnt = v_step
-                While (lineCnt * sizeFactor_x) < (bmp_Size.Width / 2)
-                    lineCnt = Math.Round(lineCnt, 2)
-                    g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                If Not chk_Single.Checked Then
+                    v_step = 0.0001
+                    While (v_step * sizeFactor_x) < 25
+                        If Replace(Replace(Replace(v_step.ToString, "0", ""), ".", ""), ",", "") = "1" Then
+                            v_step *= 5
+                        Else
+                            v_step *= 2
+                        End If
+                    End While
+                    lineCnt = v_step
+                    While (lineCnt * sizeFactor_x) < (bmp_Size.Width / 2)
+                        lineCnt = Math.Round(lineCnt, 2)
+                        g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
                                    CInt((bmp_Size.Width / 2) - (lineCnt * sizeFactor_x)),
                                    0,
                                    CInt((bmp_Size.Width / 2) - (lineCnt * sizeFactor_x)),
                                    bmp_Size.Height)
-                    g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                        g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
                                    CInt((bmp_Size.Width / 2) + (lineCnt * sizeFactor_x)),
                                    0,
                                    CInt((bmp_Size.Width / 2) + (lineCnt * sizeFactor_x)),
                                    bmp_Size.Height)
-                    If CInt((bmp_Size.Width / 2) - (lineCnt * sizeFactor_x)) - 6 > 0 Then
-                        v_HOffset = CInt(g_BMP.MeasureString((-lineCnt).ToString,
+                        If CInt((bmp_Size.Width / 2) - (lineCnt * sizeFactor_x)) - 6 > 0 Then
+                            v_HOffset = CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                             New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width / 2)
-                        v_VOffset = p_axes(bmpCnt, 0) *
+                            v_VOffset = p_axes(bmpCnt, 0) *
                                     (CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height) / 2 + 3) +
                                     (CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height) / 2) - 2
-                        g_BMP.DrawString((-lineCnt).ToString,
+                            g_BMP.DrawString((-lineCnt).ToString,
                                      New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
                                      New SolidBrush(Color.White),
                                      CInt((bmp_Size.Width / 2) - (lineCnt * sizeFactor_x)) - v_HOffset,
                                      CInt((bmp_Size.Height) / 2 - v_VOffset))
-                        'End If
-                        'If CInt((bmp_Size.Width / 2) - (lineCnt * sizeFactor_x)) - 6 > 0 Then
-                        v_HOffset = CInt(g_BMP.MeasureString(lineCnt.ToString,
+                            v_HOffset = CInt(g_BMP.MeasureString(lineCnt.ToString,
                                                             New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width / 2)
-                        v_VOffset = p_axes(bmpCnt, 1) *
+                            v_VOffset = p_axes(bmpCnt, 1) *
                                     (CInt(g_BMP.MeasureString(lineCnt.ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height) / 2 + 3) +
                                     (CInt(g_BMP.MeasureString(lineCnt.ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height) / 2) - 2
-                        g_BMP.DrawString(lineCnt.ToString,
+                            g_BMP.DrawString(lineCnt.ToString,
                                      New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
                                      New SolidBrush(Color.White),
                                      CInt((bmp_Size.Width / 2) + (lineCnt * sizeFactor_x)) - v_HOffset,
                                      CInt(bmp_Size.Height) / 2 - v_VOffset)
-                    End If
-                    lineCnt += v_step
-                End While
+                        End If
+                        lineCnt += v_step
+                    End While
+                End If
 
-                v_step = 0.001
-                While (v_step * sizeFactor) < 13
-                    If Replace(Replace(Replace(v_step.ToString, "0", ""), ".", ""), ",", "") = "1" Then
-                        v_step *= 5
-                    Else
-                        v_step *= 2
-                    End If
-                End While
-                lineCnt = v_step
-                While (lineCnt * sizeFactor) < (bmp_Size.Height / 2)
-                    g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                If Not chk_Single.Checked Then
+                    v_step = 0.001
+                    While (v_step * sizeFactor) < 13
+                        If Replace(Replace(Replace(v_step.ToString, "0", ""), ".", ""), ",", "") = "1" Then
+                            v_step *= 5
+                        Else
+                            v_step *= 2
+                        End If
+                    End While
+                    lineCnt = v_step
+                    While (lineCnt * sizeFactor) < (bmp_Size.Height / 2)
+                        g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
                                0,
                                CInt((bmp_Size.Height / 2) + (lineCnt * sizeFactor)),
                                bmp_Size.Width,
                                CInt((bmp_Size.Height / 2) + (lineCnt * sizeFactor)))
-                    g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
+                        g_BMP.DrawLine(New Pen(Color.FromArgb(10, 255, 255, 255), 1),
                                    0,
                                    CInt((bmp_Size.Height / 2) - (lineCnt * sizeFactor)),
                                    bmp_Size.Width,
                                    CInt((bmp_Size.Height / 2) - (lineCnt * sizeFactor)))
-                    If CInt((bmp_Size.Height / 2) - (lineCnt * sizeFactor)) - 6 > 0 Then
-                        v_HOffset = -p_axes(bmpCnt, 2) *
+                        If CInt((bmp_Size.Height / 2) - (lineCnt * sizeFactor)) - 6 > 0 Then
+                            v_HOffset = -p_axes(bmpCnt, 2) *
                                     (CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width) / 2 + 3) +
                                     (CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width) / 2)
-                        v_VOffset = CInt(g_BMP.MeasureString((-lineCnt).ToString,
+                            v_VOffset = CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                             New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height / 2)
-                        g_BMP.DrawString((-lineCnt).ToString,
+                            g_BMP.DrawString((-lineCnt).ToString,
                                      New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
                                      New SolidBrush(Color.White),
                                      CInt(bmp_Size.Width / 2) - v_HOffset,
                                      CInt((bmp_Size.Height / 2) + (lineCnt * sizeFactor)) - v_VOffset)
-                        v_HOffset = -p_axes(bmpCnt, 3) *
+                            v_HOffset = -p_axes(bmpCnt, 3) *
                                     (CInt(g_BMP.MeasureString(lineCnt.ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width) / 2 + 3) +
                                     (CInt(g_BMP.MeasureString((-lineCnt).ToString,
                                                                New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Width) / 2)
-                        v_VOffset = CInt(g_BMP.MeasureString(lineCnt.ToString,
+                            v_VOffset = CInt(g_BMP.MeasureString(lineCnt.ToString,
                                                             New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6))).Height / 2)
-                        g_BMP.DrawString(lineCnt.ToString,
+                            g_BMP.DrawString(lineCnt.ToString,
                                      New Font(Me.Font.FontFamily, Math.Max(Math.Min(sizeFactor / 4, 10), 6)),
                                      New SolidBrush(Color.White),
                                      CInt(bmp_Size.Width / 2) - v_HOffset,
                                      CInt((bmp_Size.Height / 2) - (lineCnt * sizeFactor)) - v_VOffset)
-                    End If
-                    lineCnt += v_step
-                End While
+                        End If
+                        lineCnt += v_step
+                    End While
+                End If
 
                 For valCnt = 2 To val_Fct(bmpCnt).Count - 1
                     'Try
