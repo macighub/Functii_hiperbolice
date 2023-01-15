@@ -330,7 +330,7 @@ Partial Class Form1
         Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.163636!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Panel2.Location = New System.Drawing.Point(0, 59)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(259, 608)
+        Me.Panel2.Size = New System.Drawing.Size(259, 647)
         Me.Panel2.TabIndex = 1
         '
         'chk_acsch
@@ -573,7 +573,7 @@ Partial Class Form1
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(259, 59)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(623, 608)
+        Me.Panel3.Size = New System.Drawing.Size(623, 647)
         Me.Panel3.TabIndex = 2
         '
         'pic_Graphics
@@ -582,7 +582,7 @@ Partial Class Form1
         Me.pic_Graphics.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pic_Graphics.Location = New System.Drawing.Point(0, 30)
         Me.pic_Graphics.Name = "pic_Graphics"
-        Me.pic_Graphics.Size = New System.Drawing.Size(623, 578)
+        Me.pic_Graphics.Size = New System.Drawing.Size(623, 617)
         Me.pic_Graphics.TabIndex = 1
         Me.pic_Graphics.TabStop = False
         '
@@ -615,7 +615,7 @@ Partial Class Form1
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel6.Location = New System.Drawing.Point(259, 59)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(2, 608)
+        Me.Panel6.Size = New System.Drawing.Size(2, 647)
         Me.Panel6.TabIndex = 3
         '
         'tmr_Resize
@@ -630,14 +630,14 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 667)
+        Me.ClientSize = New System.Drawing.Size(882, 706)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI", 9.163636!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.MinimumSize = New System.Drawing.Size(900, 711)
+        Me.MinimumSize = New System.Drawing.Size(900, 750)
         Me.Name = "Form1"
         Me.Text = "Funcții hiperbolice"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
