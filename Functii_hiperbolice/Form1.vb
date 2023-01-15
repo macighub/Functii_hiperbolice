@@ -2,7 +2,6 @@
 Imports System.Runtime.Intrinsics.X86
 
 Public Class Form1
-    'Private val_Fct(12) As Coordinates
     Private b_Shown As Boolean = False
     Private val_Fct(12) As List(Of KeyValuePair(Of Double, Double))
     Private bmp_GRF(12) As Bitmap
@@ -73,14 +72,10 @@ Public Class Form1
         Dim l_GridSize As Size = New Size(0, 0)
         Dim l_CheckedFunctionCount As Integer = CheckedFunctionCount()
 
-        'If chk_Single.Checked Then
-        '    l_GridSize = New Size(1, 1)
-        'Else
         l_GridSize.Width = Math.Ceiling(Math.Sqrt(l_CheckedFunctionCount))
-            If l_GridSize.Width > 0 Then
-                l_GridSize.Height = Math.Ceiling(l_CheckedFunctionCount / l_GridSize.Width)
-            End If
-        'End If
+        If l_GridSize.Width > 0 Then
+            l_GridSize.Height = Math.Ceiling(l_CheckedFunctionCount / l_GridSize.Width)
+        End If
 
         Return l_GridSize
     End Function
@@ -104,8 +99,6 @@ Public Class Form1
     End Function
 
     Private Sub pic_Graphics_Paint(sender As Object, e As PaintEventArgs) Handles pic_Graphics.Paint
-        'Me.SuspendLayout()
-        'pic_Graphics.SuspendLayout()
         Dim l_CheckedFunctionCount As Integer = CheckedFunctionCount()
         Dim l_CheckedFunctions() As KeyValuePair(Of String, Boolean) = CheckedFunctions()
         Dim l_GridSize As Size = GridSize()
@@ -144,17 +137,6 @@ Public Class Form1
                     For grfCnt = 0 To 11
                         If l_CheckedFunctions(grfCnt).Value Then
                             If grfIDX Mod lgdSize.Height = 0 Then
-                                'e.Graphics.FillRectangle(New Drawing2D.LinearGradientBrush(New Rectangle(CInt(Math.Floor(grfIDX / lgdSize.Height) * (pic_Graphics.Width / lgdSize.Width)),
-                                '                                                                         0,
-                                '                                                                         CInt(pic_Graphics.Width / lgdSize.Width),
-                                '                                                                         lgdSize.Height * 25),
-                                '                                                           Color.FromArgb(64, 64, 64),
-                                '                                                           Color.Black,
-                                '                                                           Drawing2D.LinearGradientMode.Vertical),
-                                '                         CInt(Math.Floor(grfIDX / lgdSize.Width) * (pic_Graphics.Width / lgdSize.Width)),
-                                '                         0,
-                                '                         CInt(pic_Graphics.Width / lgdSize.Width),
-                                '                         lgdSize.Height * 25)
                                 e.Graphics.FillRectangle(New Drawing2D.LinearGradientBrush(New Rectangle(CInt(Math.Floor(grfIDX / lgdSize.Height) * (pic_Graphics.Width / lgdSize.Width)),
                                                                                                      0,
                                                                                                      CInt(pic_Graphics.Width / lgdSize.Width),
@@ -167,21 +149,11 @@ Public Class Form1
                                                      CInt(pic_Graphics.Width / lgdSize.Width),
                                                      lgdSize.Height * 25)
                             End If
-                            'e.Graphics.FillRectangle(New SolidBrush(Colors(grfCnt)),
-                            '                     CInt(Math.Floor(grfIDX / lgdSize.Height) * (pic_Graphics.Width / lgdSize.Width)) + 10,
-                            '                     (grfIDX Mod lgdSize.Height) * 25 + 11,
-                            '                     25,
-                            '                     3)
                             e.Graphics.FillRectangle(New SolidBrush(Colors(grfCnt)),
                                                  CInt(Math.Floor(grfIDX / lgdSize.Height) * (pic_Graphics.Width / lgdSize.Width)) + 10,
                                                  CInt(grfIDX Mod lgdSize.Height) * 25 + 11,
                                                  25,
                                                  3)
-                            'e.Graphics.DrawString(l_CheckedFunctions(grfCnt).Key,
-                            '                      sender.font,
-                            '                      New SolidBrush(Color.White),
-                            '                      CInt(Math.Floor(grfIDX / lgdSize.Height) * (pic_Graphics.Width / lgdSize.Width)) + 40,
-                            '                      (grfIDX Mod lgdSize.Height) * 25 + 2)
                             e.Graphics.DrawString(l_CheckedFunctions(grfCnt).Key,
                                                   sender.font,
                                                   New SolidBrush(Color.White),
@@ -265,10 +237,10 @@ Public Class Form1
                 For grfCnt = 0 To 11
                     If l_CheckedFunctions(grfCnt).Value Then
                         sizeFactor_x = ((grfArea.Width) / (l_To - l_From))
-                    sizeFactor_y = ((grfArea.Height) / (val_Fct(grfCnt)(0).Value - val_Fct(grfCnt)(0).Key))
-                    If Double.IsNaN(sizeFactor_y) Then
-                        sizeFactor_y = sizeFactor_x
-                    End If
+                        sizeFactor_y = ((grfArea.Height) / (val_Fct(grfCnt)(0).Value - val_Fct(grfCnt)(0).Key))
+                        If Double.IsNaN(sizeFactor_y) Then
+                            sizeFactor_y = sizeFactor_x
+                        End If
 
                         If Double.IsNaN(sizeFactor) OrElse sizeFactor = 0 Then
                             sizeFactor = Math.Min(sizeFactor_x, sizeFactor_y)
@@ -463,14 +435,6 @@ Public Class Form1
                 Next
             Next
         End If
-
-        'CreateGraphs()
-        'e.Graphics.DrawImage(bmp_GRF(0), 10, 10)
-
-        'Application.DoEvents()
-
-        'Me.ResumeLayout()
-        'pic_Graphics.ResumeLayout()
     End Sub
 
     Private Sub chk_fct_CheckedChanged(sender As Object, e As EventArgs) Handles chk_sh.CheckedChanged, chk_th.CheckedChanged, chk_sech.CheckedChanged, chk_cth.CheckedChanged, chk_csch.CheckedChanged, chk_ch.CheckedChanged, chk_arsech.CheckedChanged, chk_argth.CheckedChanged, chk_argcth.CheckedChanged, chk_arcsh.CheckedChanged, chk_arcch.CheckedChanged, chk_acsch.CheckedChanged
@@ -497,7 +461,6 @@ Public Class Form1
         SetLimits()
         CalculateValues(False)
         pic_Graphics.Refresh()
-        'pic_Graphics.Refresh()
     End Sub
 
     Private Sub SetLimits()
@@ -895,9 +858,6 @@ Public Class Form1
 
                         End Try
                     End If
-                    'Catch
-
-                    'End Try
                 Next
 
                 g_BMP.Flush()
@@ -1058,16 +1018,4 @@ Public Class Form1
         CalculateValues(False)
         pic_Graphics.Refresh()
     End Sub
-
-    'Private Sub Form1_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-    '    Dim l_limits As KeyValuePair(Of Decimal, Decimal) = GetLimits()
-
-    '    If txt_From.BackColor = Color.Cyan Then
-    '        txt_From.Text = l_limits.Key
-    '    End If
-
-    '    If txt_To.BackColor = Color.Cyan Then
-    '        txt_To.Text = l_limits.Value
-    '    End If
-    'End Sub
 End Class
