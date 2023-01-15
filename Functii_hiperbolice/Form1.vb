@@ -697,7 +697,7 @@ Public Class Form1
             If pic_Graphics.Width / pic_Graphics.Height >= 1.5 Then
                 bmp_Size = New Size(pic_Graphics.Width - 325, pic_Graphics.Height - 20)
             Else
-                bmp_Size = New Size(pic_Graphics.Width - 20, pic_Graphics.Height - CInt(Math.Ceiling(l_CheckedFunctionCount / 3)) * 25 - 20)
+                bmp_Size = New Size(pic_Graphics.Width - 20, pic_Graphics.Height - l_GridSize.Width * 25 - 20)
             End If
 
             For grfCnt = 0 To 11
