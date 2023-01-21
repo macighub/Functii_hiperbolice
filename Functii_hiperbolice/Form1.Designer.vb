@@ -93,7 +93,7 @@ Partial Class Form1
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(0, 3, 0, 0)
-        Me.Panel1.Size = New System.Drawing.Size(882, 59)
+        Me.Panel1.Size = New System.Drawing.Size(884, 59)
         Me.Panel1.TabIndex = 0
         '
         'Label12
@@ -102,7 +102,7 @@ Partial Class Form1
         Me.Label12.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(691, 3)
+        Me.Label12.Location = New System.Drawing.Point(683, 3)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(29, 32)
         Me.Label12.TabIndex = 14
@@ -115,7 +115,7 @@ Partial Class Form1
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(668, 3)
+        Me.Label8.Location = New System.Drawing.Point(660, 3)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(23, 32)
         Me.Label8.TabIndex = 10
@@ -129,7 +129,7 @@ Partial Class Form1
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(641, 3)
+        Me.Label11.Location = New System.Drawing.Point(633, 3)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(27, 32)
         Me.Label11.TabIndex = 13
@@ -143,7 +143,7 @@ Partial Class Form1
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(631, 3)
+        Me.Label7.Location = New System.Drawing.Point(623, 3)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(10, 32)
         Me.Label7.TabIndex = 9
@@ -157,7 +157,7 @@ Partial Class Form1
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(533, 3)
+        Me.Label9.Location = New System.Drawing.Point(525, 3)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(98, 32)
         Me.Label9.TabIndex = 11
@@ -171,7 +171,7 @@ Partial Class Form1
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(526, 3)
+        Me.Label6.Location = New System.Drawing.Point(518, 3)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(7, 32)
         Me.Label6.TabIndex = 8
@@ -185,7 +185,7 @@ Partial Class Form1
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(499, 3)
+        Me.Label10.Location = New System.Drawing.Point(491, 3)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(27, 32)
         Me.Label10.TabIndex = 12
@@ -199,7 +199,7 @@ Partial Class Form1
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 7.854546!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(491, 3)
+        Me.Label5.Location = New System.Drawing.Point(483, 3)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(8, 32)
         Me.Label5.TabIndex = 7
@@ -213,7 +213,7 @@ Partial Class Form1
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(342, 3)
+        Me.Label4.Location = New System.Drawing.Point(334, 3)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(149, 32)
         Me.Label4.TabIndex = 6
@@ -226,9 +226,9 @@ Partial Class Form1
         Me.txt_Step.BackColor = System.Drawing.Color.Silver
         Me.txt_Step.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_Step.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_Step.Location = New System.Drawing.Point(266, 3)
+        Me.txt_Step.Location = New System.Drawing.Point(258, 3)
         Me.txt_Step.Name = "txt_Step"
-        Me.txt_Step.Size = New System.Drawing.Size(76, 26)
+        Me.txt_Step.Size = New System.Drawing.Size(76, 24)
         Me.txt_Step.TabIndex = 5
         Me.txt_Step.Text = " "
         Me.txt_Step.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -239,7 +239,7 @@ Partial Class Form1
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(207, 3)
+        Me.Label3.Location = New System.Drawing.Point(199, 3)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(59, 32)
         Me.Label3.TabIndex = 4
@@ -252,9 +252,9 @@ Partial Class Form1
         Me.txt_To.BackColor = System.Drawing.Color.Silver
         Me.txt_To.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_To.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_To.Location = New System.Drawing.Point(131, 3)
+        Me.txt_To.Location = New System.Drawing.Point(123, 3)
         Me.txt_To.Name = "txt_To"
-        Me.txt_To.Size = New System.Drawing.Size(76, 26)
+        Me.txt_To.Size = New System.Drawing.Size(76, 24)
         Me.txt_To.TabIndex = 3
         Me.txt_To.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -265,9 +265,9 @@ Partial Class Form1
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.78182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(115, 3)
+        Me.Label2.Location = New System.Drawing.Point(110, 3)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(16, 25)
+        Me.Label2.Size = New System.Drawing.Size(13, 21)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = ","
         '
@@ -276,9 +276,9 @@ Partial Class Form1
         Me.txt_From.BackColor = System.Drawing.Color.Silver
         Me.txt_From.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txt_From.Dock = System.Windows.Forms.DockStyle.Left
-        Me.txt_From.Location = New System.Drawing.Point(39, 3)
+        Me.txt_From.Location = New System.Drawing.Point(34, 3)
         Me.txt_From.Name = "txt_From"
-        Me.txt_From.Size = New System.Drawing.Size(76, 26)
+        Me.txt_From.Size = New System.Drawing.Size(76, 24)
         Me.txt_From.TabIndex = 1
         Me.txt_From.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -291,7 +291,7 @@ Partial Class Form1
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(0, 3)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 30)
+        Me.Label1.Size = New System.Drawing.Size(34, 26)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "x ϵ ["
         Me.Label1.UseCompatibleTextRendering = True
@@ -304,9 +304,9 @@ Partial Class Form1
         Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(0, 35)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(882, 24)
+        Me.Label13.Size = New System.Drawing.Size(884, 24)
         Me.Label13.TabIndex = 15
-        Me.Label13.Text = "i - intervalul dintre doua valori consecutive calculate"
+        Me.Label13.Text = "i - intervalul dintre două valori consecutive calculate"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Label13.UseCompatibleTextRendering = True
         '
@@ -330,7 +330,7 @@ Partial Class Form1
         Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.163636!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
         Me.Panel2.Location = New System.Drawing.Point(0, 59)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(259, 647)
+        Me.Panel2.Size = New System.Drawing.Size(259, 652)
         Me.Panel2.TabIndex = 1
         '
         'chk_acsch
@@ -347,7 +347,7 @@ Partial Class Form1
         Me.chk_acsch.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.chk_acsch.Size = New System.Drawing.Size(259, 44)
         Me.chk_acsch.TabIndex = 11
-        Me.chk_acsch.Text = "Arccosecantă hiperbolică (arccsch / arcsch / acsch)"
+        Me.chk_acsch.Text = "Arccosecantă hiperbolică           (arccsch / arcsch / acsch)"
         Me.chk_acsch.UseVisualStyleBackColor = False
         '
         'chk_csch
@@ -364,7 +364,7 @@ Partial Class Form1
         Me.chk_csch.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.chk_csch.Size = New System.Drawing.Size(259, 44)
         Me.chk_csch.TabIndex = 10
-        Me.chk_csch.Text = "Cosecantă hiperbolică         (cosech / csch)"
+        Me.chk_csch.Text = "Cosecantă hiperbolică                (cosech / csch)"
         Me.chk_csch.UseVisualStyleBackColor = False
         '
         'chk_arsech
@@ -415,8 +415,7 @@ Partial Class Form1
         Me.chk_argcth.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.chk_argcth.Size = New System.Drawing.Size(259, 81)
         Me.chk_argcth.TabIndex = 7
-        Me.chk_argcth.Text = "Arccotangentă hiperbolică / Argument cotangentă hiperbolică                      " &
-    "   (arccoth / argcth)"
+        Me.chk_argcth.Text = "Arccotangentă hiperbolică / Argument cotangentă hiperbolică (arccoth / argcth)"
         Me.chk_argcth.UseVisualStyleBackColor = False
         '
         'chk_cth
@@ -433,7 +432,7 @@ Partial Class Form1
         Me.chk_cth.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.chk_cth.Size = New System.Drawing.Size(259, 44)
         Me.chk_cth.TabIndex = 6
-        Me.chk_cth.Text = "Cotangentă hiperbolică         (coth / cth)"
+        Me.chk_cth.Text = "Cotangentă hiperbolică                (coth / cth)"
         Me.chk_cth.UseVisualStyleBackColor = False
         '
         'chk_argth
@@ -519,8 +518,8 @@ Partial Class Form1
         Me.chk_arcsh.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.chk_arcsh.Size = New System.Drawing.Size(259, 81)
         Me.chk_arcsh.TabIndex = 1
-        Me.chk_arcsh.Text = "Arcsinus hiperbolic /          Argument sinus hiperbolic (arcsinh / arcsh) /     " &
-    "              (argsinh / argsh)"
+        Me.chk_arcsh.Text = "Arcsinus hiperbolic /          Argument sinus hiperbolic         (arcsinh / arcsh" &
+    ") /                   (argsinh / argsh)"
         Me.chk_arcsh.UseVisualStyleBackColor = False
         '
         'chk_sh
@@ -560,7 +559,7 @@ Partial Class Form1
         Me.chk_all.ForeColor = System.Drawing.Color.White
         Me.chk_all.Location = New System.Drawing.Point(10, 0)
         Me.chk_all.Name = "chk_all"
-        Me.chk_all.Size = New System.Drawing.Size(122, 23)
+        Me.chk_all.Size = New System.Drawing.Size(116, 21)
         Me.chk_all.TabIndex = 0
         Me.chk_all.Text = "Toate funcțiile"
         Me.chk_all.UseVisualStyleBackColor = False
@@ -573,7 +572,7 @@ Partial Class Form1
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(259, 59)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(623, 647)
+        Me.Panel3.Size = New System.Drawing.Size(625, 652)
         Me.Panel3.TabIndex = 2
         '
         'pic_Graphics
@@ -582,7 +581,7 @@ Partial Class Form1
         Me.pic_Graphics.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pic_Graphics.Location = New System.Drawing.Point(0, 30)
         Me.pic_Graphics.Name = "pic_Graphics"
-        Me.pic_Graphics.Size = New System.Drawing.Size(623, 617)
+        Me.pic_Graphics.Size = New System.Drawing.Size(625, 622)
         Me.pic_Graphics.TabIndex = 1
         Me.pic_Graphics.TabStop = False
         '
@@ -593,7 +592,7 @@ Partial Class Form1
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(623, 30)
+        Me.Panel4.Size = New System.Drawing.Size(625, 30)
         Me.Panel4.TabIndex = 0
         '
         'chk_Single
@@ -604,7 +603,7 @@ Partial Class Form1
         Me.chk_Single.ForeColor = System.Drawing.Color.White
         Me.chk_Single.Location = New System.Drawing.Point(10, 5)
         Me.chk_Single.Name = "chk_Single"
-        Me.chk_Single.Size = New System.Drawing.Size(358, 23)
+        Me.chk_Single.Size = New System.Drawing.Size(335, 21)
         Me.chk_Single.TabIndex = 0
         Me.chk_Single.Text = "Un singur grafic pentru toate funcțiile hiperbolice"
         Me.chk_Single.UseVisualStyleBackColor = False
@@ -615,7 +614,7 @@ Partial Class Form1
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel6.Location = New System.Drawing.Point(259, 59)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(2, 647)
+        Me.Panel6.Size = New System.Drawing.Size(2, 652)
         Me.Panel6.TabIndex = 3
         '
         'tmr_Resize
@@ -628,9 +627,9 @@ Partial Class Form1
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 706)
+        Me.ClientSize = New System.Drawing.Size(884, 711)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
